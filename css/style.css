@@ -1,0 +1,14 @@
+body{
+    background-image: url(back.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#loader{
+    width: 80px;
+    height: 80px;
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+}
