@@ -65,12 +65,11 @@ class floating_bar {
         this.tick_mark.play()
         setTimeout(()=>{
             this.dismiss()
-            this.tick_mark.pause()
             this.tick_mark.style.display="none"
             for (let i = 0; i < this.bar.childElementCount-1; i++) {
                 this.bar.children[i].style.display = "block"
             }
-        },1900)
+        },1880)
     }
 
     dismiss() {
