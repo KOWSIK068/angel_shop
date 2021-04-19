@@ -13,11 +13,10 @@ class floating_bar {
         background-color: white;
         padding: 13px;
         display: none;
-        text-align: center;
     }
     ` + ".blured_background" + `{
         background-color: #0000003d;
-        position: absolute;
+        position: absolute;rrgba(0, 0, 0, 0.692), 0, 0, 0.692)
         top: 0px;
         left: 0px;
         display: none;
@@ -42,8 +41,9 @@ class floating_bar {
         this.back.style.width = innerWidth + "px"
         this.back.style.height = innerHeight + "px"
         var i
-        for (i = 0; i < document.querySelector("body").childElementCount - 2; i++) {
-            document.querySelector("body").children[i].style.filter = "blur(" + blur_value + "px)"
+        for (i = 0; i < document.querySelector("body").childElementCount; i++) {
+            if (document.querySelector("body").children[i]!=this.bar)
+                document.querySelector("body").children[i].style.filter = "blur(" + blur_value + "px)"
         }
         this.bar.style.display = "block"
         this.bar.style.width = width
@@ -54,28 +54,33 @@ class floating_bar {
         this.bar.style.left = innerWidth / 2 - this.bar.offsetWidth / 2 + "px"
     }
 
-    mark_done(){
-        for (let i = 0; i < this.bar.childElementCount; i++) {
-            this.bar.children[i].style.display = "none"
-        }
-        this.tick_mark.style.display="block"
-        this.tick_mark.style.margin="auto"
-        this.tick_mark.style.marginTop=this.bar.clientHeight/2-30+"px"
-        this.tick_mark.style.marginBottom=this.bar.clientHeight/2-30+"px"
+    mark_done(fun){
         this.tick_mark.play()
+        setTimeout(()=>{
+            for (let i = 0; i < this.bar.childElementCount; i++) {
+                this.bar.children[i].style.display = "none"
+            }
+            this.tick_mark.style.display="block"
+            this.tick_mark.style.margin="auto"
+            this.tick_mark.style.marginTop=this.bar.clientHeight/2-30+"px"
+            this.tick_mark.style.marginBottom=this.bar.clientHeight/2-30+"px"
+        },300)
         setTimeout(()=>{
             this.dismiss()
             this.tick_mark.style.display="none"
             for (let i = 0; i < this.bar.childElementCount-1; i++) {
                 this.bar.children[i].style.display = "block"
             }
-        },1880)
+            if (fun) {
+                fun()
+            }
+        },2500)
     }
 
     dismiss() {
         this.back.style.display = "none"
         this.bar.style.display = "none"
-        for (var i = 0; i < document.querySelector("body").childElementCount - 2; i++) {
+        for (var i = 0; i < document.querySelector("body").childElementCount; i++) {
             document.querySelector("body").children[i].style.filter = "blur(0px)"
         }
     }

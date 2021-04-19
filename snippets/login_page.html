@@ -1,77 +1,15 @@
-<style>
-    #welcome {
-        font-weight: 600;
-        font-size: 50px;
-        color: aliceblue;
-        position: absolute;
-        top: 80px;
-        left: 12%;
-    }
-    
-    #login_bar{
-        display: none;
-    }
-
-    #google_button{
-        margin: 15px auto;
-        display: block;
-    }
-
-    #login_button {
-        font-weight: 550;
-        font-size: larger;
-        padding: 3px 10px;
-        text-align: center;
-        background-color: red;
-        border-radius: 5%;
-        position: absolute;
-        top: 160px;
-        left: 14%;
-        color: aliceblue;
-    }
-
-    #login_button:hover{
-        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.123),
-                    -4px -4px 4px rgba(0, 0, 0, 0.123),
-                    -4px 4px 4px rgba(0, 0, 0, 0.123),
-                    4px -4px 4px rgba(0, 0, 0, 0.123);
-    }
-
-    #new_user {
-        position: absolute;
-        top: 195px;
-        left: 14%;
-        color: aliceblue;
-        font-size: 17px;
-    }
-
-    #register_now {
-        color: red;
-        font-weight: 540;
-    }
-
-    body {
-        background-size: cover;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-    }
-
-    @media (min-width:780px) {
-        body {
-            background-image: url(img/login/login_back.png);
-        }
-    }
-
-    @media (max-width:779.99px) {
-        body {
-            background-image: url(img/login/login_back1.png);
-        }
-    }
-</style>
+<link rel="stylesheet" href="css/login.css">
 <div id="welcome">Welcome</div>
-<div id="login_button">Login</div>
-<div id="new_user">New user? <span id="register_now">register now</span></div>
+<div id="login_button" class="button button_hover">Login</div>
+<div id="new_user">New user? <span id="register_now" class="button button_text_hover">register now</span></div>
 <div id="login_bar">
     <div>Login using Google account</div>
-    <button id="google_button">sign in</button>
+    <div>press down to make account</div>
+    <div id="google_button" class="button button_hover">Sign in</div>
+</div>
+<div id="new_register_bar">
+    <div id="first_name">First name<input id="first_name_input" type="text"></div>
+    <div id="last_name">Last name<input id="last_name_input" type="text"></div>
+    <div id="password">Password<input id="password_input" type="password"></div>
+    <button type="submit" id="create">Create</button>
 </div>

@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(() => {
-        parse_data.xml("snippets/login_page.html", (data) => {
-            document.getElementById("loader").style.display = "none"
-            document.body.innerHTML = data
-            login_script()
-        })
-    }, 4000)
+    var login_page = new Page_loader('login')
+    setTimeout(()=>{
+        document.getElementById("loader").style.display="none"
+    },2000)
+    document.getElementById("nav_container").addEventListener("click",()=>{
+        login_page.load(login_script)
+    })
 })
