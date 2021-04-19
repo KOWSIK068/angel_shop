@@ -13,7 +13,7 @@ var welcome = function (obj) {
     document.querySelector("#nav_window_closer").addEventListener("click", () => {
         setTimeout(()=> {document.querySelector("#nav_window_closer").style.display = "none"},2000)
         document.querySelector("#nav_window_closer").style.backgroundColor = "rgba(0, 0, 0, 0)"
-        document.querySelector("#nav_window").style.width = "1px"
+        document.querySelector("#nav_window").style.width = "10px"
         unblur("#content") //break point
     })
 
