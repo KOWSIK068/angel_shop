@@ -1,61 +1,6 @@
-<style>
-    *{
-        transition: filter 2s;
-    }
-    #user{
-        margin-top: 200px;
-        width: 100%;
-        text-align: center;
-        font-size: 100px;
-        transition: font-size 3s;
-        color: rgba(253, 68, 68, 0.897);
-        text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.657);
-        position: absolute;
-        clear: both;
-    }
-    #nav_window{
-        transition: width 2s;
-        width: 10px;
-        background-color: rgb(255, 0, 0);
-        position: absolute;
-        right: 0px;
-        box-shadow: 4px 0px 5px rgba(0, 0, 0, 0.267);
-        cursor: pointer;
-        z-index: 2;
-    }
-    #nav_window_closer{
-        background-color: rgba(255, 0, 0, 0);
-        width: 100%;
-        position: absolute;
-        transition: background-color 2s;
-        z-index: 1;
-        display: none;
-    }
-    @media (min-width: 780px) {
-        #nav_window{
-            height: 90vh;
-            top: 10vh;
-        }
-        #nav_window_closer{
-            height: 90vh;
-            top: 10vh;
-        }
-    }
-
-    @media (max-width: 779.99px) {
-        #nav_window{
-            height: 93vh;
-            top: 7vh;
-        }
-        #nav_window_closer{
-            height: 93vh;
-            top: 7vh;
-        }
-    }
-</style>
+<link rel="stylesheet" href="css/welcome_user.css">
 <div id="nav_window_closer"></div>
 <div id="nav_window"></div>
-<button style="margin-top: 11vh;">hello</button>
 <div id="user">
     <div id="welcome">Welcome</div>
     <div id="user_name">{{name}}</div>

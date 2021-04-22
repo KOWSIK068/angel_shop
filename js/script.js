@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    var login_page = new Page_loader('login')
-    setTimeout(()=>{
-        document.getElementById("loader").style.display="none"
-    },2000)
-    document.getElementById("nav_container").addEventListener("click",()=>{
+    var user_name= localStorage.getItem("user_name")
+    if (user_name) {
+        document.getElementById("loader").style.display = "none"
+        var name_page=new Page_loader('welcome','#content')
+        name_page.load(welcome)
+    }
+    else{
+        var login_page = new Page_loader('login')
         login_page.load(login_script)
-    })
+    }
 })

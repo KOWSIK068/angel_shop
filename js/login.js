@@ -22,9 +22,8 @@ function login_script(login_page){
         }
         if(!flag)
         {
-            window.user_info={}
-            user_info.name=document.querySelector("#first_name_input").value+" "+document.querySelector("#last_name_input").value
-            user_info.password=document.querySelector("#password_input").value
+            localStorage.setItem("user_name",document.querySelector("#first_name_input").value+" "+document.querySelector("#last_name_input").value)
+            localStorage.setItem("user_mail_id",document.querySelector("#password_input").value)
             new_registration.mark_done(()=>{
                 login_page.close()
                 window.name_page=new Page_loader('welcome','#content')
