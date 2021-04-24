@@ -6,6 +6,7 @@ var welcome = function (obj) {
             if (expanded) {
                 expanded=false
                 window.inwork = true
+                document.querySelector(".nav_button").classList.remove("nav_active")
                 setTimeout(() => { document.querySelector("#nav_window_closer").style.display = "none"
                     window.inwork=false
                 }, 1000)
@@ -19,6 +20,7 @@ var welcome = function (obj) {
             else {
                 window.inwork = true
                 expanded=true
+                document.querySelector(".nav_button").classList.add("nav_active")
                 document.querySelector("#nav_window").style.width = "240px"
                 document.querySelector("#nav_window").style.cursor = "default"
                 document.querySelector("#nav_window_closer").style.display = "block"
@@ -34,6 +36,7 @@ var welcome = function (obj) {
         document.querySelector("#user").style.fontSize = "0px"
     }, 1500)
     var nav_button = document.createElement("div")
+    nav_button.innerHTML='<hr><hr><hr>'
     nav_button.setAttribute("class", "button button_hover nav_button")
     nav_button.addEventListener("click", () => {
         nav_expander()
