@@ -11,12 +11,17 @@ class Page_loader{
         }
         else if (page=='welcome') {
             this.url="snippets/welcome_user.html"
-            
         }
+    }
+    sload(method){
+        parse_data.xml(this.url, (data) => {
+            this.holder.innerHTML += data
+            if(method)
+                setTimeout(()=>{method(this)},20)
+        })
     }
     load(method){
         parse_data.xml(this.url, (data) => {
-            document.getElementById("loader").style.display = "none"
             this.prev_data=this.holder.innerHTML
             this.holder.innerHTML = data
             if(method)
@@ -26,5 +31,4 @@ class Page_loader{
     close(){
         this.holder.innerHTML=this.prev_data
     }
-
 }

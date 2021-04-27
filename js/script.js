@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     var user_name= localStorage.getItem("user_name")
     if (user_name) {
-        document.getElementById("loader").style.display = "none"
-        var name_page=new Page_loader('welcome','#content')
+        var name_page=new Page_loader('welcome')
         name_page.load(welcome)
     }
     else{

@@ -4,7 +4,6 @@ function login_script(login_page){
         login_bar.show("auto","auto")
     })
     document.getElementById("google_button").addEventListener("click",()=>{
-        login_bar.mark_done()
     })
     var new_registration=new floating_bar("#new_register_bar")
     document.getElementById("register_now").addEventListener("click",()=>{
@@ -22,11 +21,11 @@ function login_script(login_page){
         }
         if(!flag)
         {
-            localStorage.setItem("user_name",document.querySelector("#first_name_input").value+" "+document.querySelector("#last_name_input").value)
+            localStorage.setItem("user_name",document.querySelector("#first_name_input").value)
             localStorage.setItem("user_mail_id",document.querySelector("#password_input").value)
             new_registration.mark_done(()=>{
                 login_page.close()
-                window.name_page=new Page_loader('welcome','#content')
+                window.name_page=new Page_loader('welcome')
                 name_page.load(welcome)
             })
         }
