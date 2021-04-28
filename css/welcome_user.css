@@ -213,7 +213,7 @@
         opacity: 1;
     }
     .row:hover .item_name{
-        transform: translate(0,-100px);
+        transform: translate(0,-90px);
         opacity: 1;
     }
     #content::-webkit-scrollbar
@@ -249,8 +249,12 @@
         top: 1vh;
         right: 1vh;
     }
-    *::-webkit-scrollbar-thumb{
-        background-color: transparent;
+    #content::-webkit-scrollbar-thumb
+    {
+        filter: blur(15px);
+        width: 3px;
+        background: linear-gradient(180deg,rgb(0, 255, 106),rgb(0, 162, 255));
+        border-radius: 5px;
     }
     .row_holder{
         width: 50%;
@@ -267,7 +271,7 @@
         opacity: 1;
     }
     .row:hover .item_name{
-        transform: translate(0,-12vh);
+        transform: translate(0,-11vh);
         opacity: 1;
     }
     #content{
