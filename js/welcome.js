@@ -1,13 +1,10 @@
 var itemcard = function (obj) {
-    var item = document.createElement("div")
-    item.classList.add("row_holder")
-    item.classList.add("remove")
-    item.innerHTML = parse_data.propname(`<div class="row" style="background-image: url(../img/items/{{img}});">
+    document.querySelector("#content").innerHTML+=parse_data.propname(`<div class="row_holder">
+    <div class="row" style="background-image: url(img/items/{{img}});">
     <div class="circle"></div>
     <div class="item_name">{{name}}</div>
     <div class="buy button button_hover">&#8377;{{price}}</div>
-    </div>`, obj)
-    document.querySelector("#content").appendChild(item)
+    </div></div>`, obj)
 }
 
 var home = function () {
